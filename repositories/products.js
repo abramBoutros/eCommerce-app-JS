@@ -1,5 +1,5 @@
-const repository = require('./repositories');
+const Repository = require('./repositories');
 
-class ProductsRepository extends repository {}
+class ProductsRepository extends Repository {}
 
 module.exports = new ProductsRepository('products.json');

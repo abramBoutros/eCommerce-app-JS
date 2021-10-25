@@ -34,13 +34,13 @@ module.exports = class Repository {
 	}
 
 	async getAll() {
-		// open the file then read its contents then parse the contents then return the parsed data
+		// open the file then read its contents then parse the contents then return the parsed data in an array
 		return JSON.parse(await fs.promises.readFile(this.filename, { encoding: 'utf-8' }));
 	}
 
 	async writeAll(records) {
 		// take the records argument and write it to this.filename
-		// 2nd argument is a customized parsing function > null is passed
+		// 2nd argument is a customized parsing function -> null is passed
 		// 3rd argument is the level of the indentation of the json file
 		await fs.promises.writeFile(this.filename, JSON.stringify(records, null, 4));
 	}
